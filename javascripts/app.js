@@ -5,26 +5,20 @@ function Div(name){
 }
 
 Div.prototype.draw = function(){
-	// $("p").append("<div>Div</div>");
 	console.log('draw works');
 	this.element = $("<div>Div</div>");
-	// console.log(this.element);
 	$("p").append(this.element);
 	$(this.element).click(this.click);
 }
 
 
 // Set up DIV subclass BLUE
-function BlueDiv(color){ // function creates class definition
-	// this.color = '#0000FF'
-}
+function BlueDiv(color){} // function creates class definition
 BlueDiv.prototype = new Div();
 
 
 // Set up DIV subclass RED
-function RedDiv(color){ // function creates class definition
-	// this.color = '#FF0000'
-}
+function RedDiv(color){} 
 RedDiv.prototype = new Div();
 
 
