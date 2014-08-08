@@ -16,18 +16,30 @@ Div.prototype.draw = function(){
 
 // Set up DIV subclass BLUE
 function BlueDiv(color){ // function creates class definition
-	this.color = '#0000FF'
+	// this.color = '#0000FF'
 }
-
 BlueDiv.prototype = new Div();
 
 
 // Set up DIV subclass RED
 function RedDiv(color){ // function creates class definition
-	this.color = '#FF0000'
+	// this.color = '#FF0000'
 }
-
 RedDiv.prototype = new Div();
+
+
+// Click handler
+BlueDiv.prototype.click = function(){
+	// console.log(this.color);
+	$(this).css("color", "#0000FF");
+	console.log('blue click');
+};
+
+RedDiv.prototype.click = function(){
+	// console.log(this.color);
+	$(this).css("color", "#FF0000");
+	console.log('red click');
+};
 
 
 // ----------------------------------------------------
@@ -40,24 +52,6 @@ $(document).ready(function(){
 	color.draw();
 });
 
-
-// Click handler
-BlueDiv.prototype.click = function(){
-	$(this.element).css("color", this.color);
-	console.log('blue click');
-};
-
-RedDiv.prototype.click = function(){
-	$(this.element).css("color", this.color);
-	console.log('red click');
-};
-
-
-var blueDiv = new BlueDiv();
-var redDiv = new RedDiv();
-
-blueDiv.click();
-redDiv.click();
 
 
 
